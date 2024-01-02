@@ -25,7 +25,7 @@ function SliderBar() {
 
 
   return (
-    <div className=' pt-[5rem] px-6 md:pt-[3%] md:px-[4rem]'>
+    <div className=' pt-[2rem] px-6 md:pt-[3%] md:px-[2rem]'>
         <h2 className='font-bold text-[2rem] text-center pb-[2rem]'>Our Trusted Partners</h2>
         <div className='block md:hidden'>
 

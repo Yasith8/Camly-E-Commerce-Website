@@ -5,6 +5,7 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Header from './components/Header'
 import SliderBar from './components/SliderBar'
+import About from './components/About'
 
 function App() {
   
@@ -14,6 +15,7 @@ function App() {
     <Navbar/>
     <Header/>
     <SliderBar/> 
+    <About/>
    </div>
   )
 }
