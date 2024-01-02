@@ -6,6 +6,7 @@ import Navbar from './components/Navbar'
 import Header from './components/Header'
 import SliderBar from './components/SliderBar'
 import About from './components/About'
+import CamCard from './components/CamCard'
 
 function App() {
   
@@ -16,6 +17,7 @@ function App() {
     <Header/>
     <SliderBar/> 
     <About/>
+    <CamCard/>
    </div>
   )
 }
