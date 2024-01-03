@@ -10,19 +10,42 @@ function CamCard(props) {
   }
 
   return (
-    <div className='md:w-auto pt-[2rem] mb-[2rem] px-6 md:pt-[2rem] md:px-[4rem]'>
+    <div className='md:w-auto md:h-screen pt-[2rem] mb-[2rem] px-6 md:pt-[2rem] md:px-[4rem]'>
       <h1 className='font-bold text-[2rem] text-center pb-5'>New Arrived Products</h1>
-        <div className="grid grid-cols-3 grid-rows-4 gap-4">
-               <div className=" row-span-4">
-                <div className='flex flex-col items-center justify-between gap-7'>
+        <div className="md:grid md:grid-cols-3 md:grid-rows-4 gap-4">
+               <div className=" md:row-span-4">
+                <div className='hidden md:flex md:flex-col md:items-center md:justify-between md:gap-7'>
                   {props.camList.map((i)=>(
                     <button key={i.id} onClick={() => btnHandler(i.id)} className='px-4 py-3 rounded-lg w-full text-white font-bold text-[1rem] bg-orange-500 border-[3px] border-orange-500 hover:bg-orange-400  hover:border-orange-800'>{i.matirial}</button>
                   ))}
                 </div>
+                {/* test */}
+                <div className='flex md:flex-col items-center justify-between gap-7 md:hidden'>
+                   <div className='flex flex-wrap md:flex-col items-center justify-center gap-3'>
+                     {props.camList.slice(0, 4).map((i) => (
+                       <button key={i.id} onClick={() => btnHandler(i.id)} className='md:px-4 py-3 w-[10rem] rounded-lg text-white font-bold text-[1rem] bg-orange-500 border-[3px] border-orange-500 hover:bg-orange-400 hover:border-orange-800'>
+                         {i.matirial}
+                       </button>
+                     ))}
+                   </div>
+                 
+                   <div className='flex flex-wrap md:flex-col items-center justify-center gap-3'>
+                     {props.camList.slice(4, 8).map((i) => (
+                       <button key={i.id} onClick={() => btnHandler(i.id)} className='px-4 py-3 w-[10rem] rounded-lg  text-white font-bold text-[1rem] bg-orange-500 border-[3px] border-orange-500 hover:bg-orange-400 hover:border-orange-800'>
+                         {i.matirial}
+                       </button>
+                     ))}
+                   </div>
+              </div>
+
+                {/* test */}
+
+
+                
                 
                </div>
-               <div className="row-span-4 col-start-2 row-start-1 flex items-center justify-center"><img src={props.camList[itemId] ? props.camList[itemId].img1 : props.camList[0].img3} /></div>
-               <div className=" row-span-4 col-start-3 row-start-1">
+               <div className="md:row-span-4 md:col-start-2 md:row-start-1 flex items-center justify-center"><img src={props.camList[itemId] ? props.camList[itemId].img1 : props.camList[0].img3} /></div>
+               <div className=" md:row-span-4 md:col-start-3 md:row-start-1">
                 
                 <table className='table-auto border border-black'>
                     <tbody>
