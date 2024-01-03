@@ -14,14 +14,14 @@ function CamCard(props) {
       <h1 className='font-bold text-[2rem] text-center pb-5'>New Arrived Products</h1>
         <div className="grid grid-cols-3 grid-rows-4 gap-4">
                <div className=" row-span-4">
-                <div className='flex flex-col items-center justify-between gap-8'>
+                <div className='flex flex-col items-center justify-between gap-7'>
                   {props.camList.map((i)=>(
                     <button key={i.id} onClick={() => btnHandler(i.id)} className='px-4 py-3 rounded-lg w-full text-white font-bold text-[1rem] bg-orange-500 border-[3px] border-orange-500 hover:bg-orange-400  hover:border-orange-800'>{i.matirial}</button>
                   ))}
                 </div>
                 
                </div>
-               <div className="bg-blue-300 row-span-4 col-start-2 row-start-1 flex items-center justify-center"><img src={props.camList[itemId]?.img1} /></div>
+               <div className="row-span-4 col-start-2 row-start-1 flex items-center justify-center"><img src={props.camList[itemId] ? props.camList[itemId].img1 : props.camList[0].img3} /></div>
                <div className=" row-span-4 col-start-3 row-start-1">
                 
                 <table className='table-auto border border-black'>
