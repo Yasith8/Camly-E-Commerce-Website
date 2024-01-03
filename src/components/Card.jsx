@@ -8,7 +8,7 @@ function Card(props) {
         <div className='bg-white  mt-[1rem] mx-[1rem] mb-[0.3rem] rounded-lg'><img src={props.img} className='max-w-[8rem] max-h-[9rem]'/></div>
         <div className='flex flex-col items-center justify-center'>
         <h1 className='px-4 text-center font-bold'>{props.name}</h1>
-        <h3 className='px-4 text-center font-medium pt-1'>{props.price}</h3>
+        <h3 className='px-4 text-center font-medium pt-1'>LKR {props.price}</h3>
         </div>
         <div className=''>
         <button className='m-2 p px-14 py-[0.4rem] rounded bg-orange-500 text-white'>Add to Cart</button>
