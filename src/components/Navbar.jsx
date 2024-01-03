@@ -6,7 +6,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from "@mui/material/Badge/Badge"
 import Button from '@mui/material/Button';
 
-function Navbar() {
+function Navbar({cartCount}) {
   return (
     <div>
       <nav className='fixed top-0 left-0 w-screen bg-white'>
@@ -22,7 +22,7 @@ function Navbar() {
           </li>
 
           <li className='flex items-center justify-evenly gap-7'>
-          <Badge color="secondary" badgeContent={2} >
+          <Badge color="warning" badgeContent={cartCount} >
             <ShoppingCartIcon />
           </Badge>
           <button className='bg-orange-500 text-white py-2 px-5 rounded-md'>LogIn</button>

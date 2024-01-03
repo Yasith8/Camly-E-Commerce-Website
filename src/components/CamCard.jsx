@@ -19,7 +19,7 @@ function CamCard(props) {
                     <button key={i.id} onClick={() => btnHandler(i.id)} className='px-4 py-3 rounded-lg w-full text-white font-bold text-[1rem] bg-orange-500 border-[3px] border-orange-500 hover:bg-orange-400  hover:border-orange-800'>{i.matirial}</button>
                   ))}
                 </div>
-                {/* test */}
+          
                 <div className='flex md:flex-col items-center justify-between gap-7 md:hidden'>
                    <div className='flex flex-wrap md:flex-col items-center justify-center gap-3'>
                      {props.camList.slice(0, 4).map((i) => (
@@ -38,7 +38,7 @@ function CamCard(props) {
                    </div>
               </div>
 
-                {/* test */}
+          
 
 
                 
