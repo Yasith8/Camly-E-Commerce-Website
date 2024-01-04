@@ -6,7 +6,7 @@ import drone2 from '../assets/drone1.png'
 function Header() {
   return (
     <div>
-        <header className=' h-screen md:w-auto pt-[5rem] px-6 md:pt-[5%] md:px-[4rem] flex flex-col md:items-center justify-between md:flex-row md:gap-3' id='home'>
+        <header className=' h-screen md:w-auto pt-[5rem] mb-[4rem] px-6 md:pt-[5%] md:px-[4rem] flex flex-col md:items-center justify-between md:flex-row md:gap-3' id='home'>
         <div className='md:w-[50%]'>
             <h4 className='text-orange-500'>Camly Camera Studio</h4>
             <h1 className='text-[3rem] md:text-[3.5rem] font-semibold'>Famous Camera</h1>
