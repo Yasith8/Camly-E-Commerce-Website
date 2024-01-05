@@ -26,10 +26,11 @@ import CardSection from './components/CardSection'
 
 function App() {
 
-  const [cartCount,setCartCount]=useState(8);
+  const [cartCount,setCartCount]=useState(0);
 
-  const addToCart=()=>{
-    setCartCount(cartCount+1)
+  const addToCart=(addToCart)=>{
+    setCartCount(cartCount+1);
+    console.log(cameraShowList[addToCart])
   }
 
 
@@ -53,8 +54,8 @@ function App() {
     <Header/>
     <SliderBar/> 
     <About/>
-    <CamCard camList={cameraShowList}/>
-    <CardSection shopList={cameraShowList}/>
+    <CamCard camList={cameraShowList} />
+    <CardSection shopList={cameraShowList} addToCart={addToCart}/>
    </div>
   )
 }

@@ -10,12 +10,18 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 function Navbar({cartCount}) {
   const [open, setOpen] = useState(false);
+  const [opernCart,setOpenCart]=useState(false);
   const showDrawer = () => {
     setOpen(true);
   };
   const onClose = () => {
     setOpen(false);
   };
+
+
+  const handleCart=()=>{
+    console.log("Handled")
+  }
   return (
     <div>
       <nav className='fixed top-0 left-0 w-screen bg-white'>
@@ -31,7 +37,7 @@ function Navbar({cartCount}) {
           </li>
 
           <li className='flex items-center justify-evenly gap-7'>
-          <Badge color="warning" badgeContent={cartCount} >
+          <Badge color="warning" badgeContent={cartCount} onClick={handleCart} className='cursor-pointer'>
             <ShoppingCartIcon />
           </Badge>
           <button className='bg-orange-500 text-white py-2 px-5 rounded-md'>LogIn</button>

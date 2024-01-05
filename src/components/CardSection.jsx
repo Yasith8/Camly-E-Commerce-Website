@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Card from './Card'
 
-function CardSection(props) {
+function CardSection({shopList,addToCart}) {
 
     const [sortOption,setSortOption]=useState("")
 
@@ -12,11 +12,11 @@ function CardSection(props) {
     const sortedShopList = () => {
         switch (sortOption) {
           case 'lowToHigh':
-            return props.shopList.slice().sort((a, b) => a.price - b.price);
+            return shopList.slice().sort((a, b) => a.price - b.price);
           case 'highToLow':
-            return props.shopList.slice().sort((a, b) => b.price - a.price);
+            return shopList.slice().sort((a, b) => b.price - a.price);
           default:
-            return props.shopList.slice();
+            return shopList.slice();
         }
       };
 
@@ -36,13 +36,13 @@ function CardSection(props) {
         <div className='flex flex-col items-center mt-3 gap-4'>
                    <div className='flex flex-wrap items-center justify-center gap-6'>
                      {sortedShopList().slice(0, 4).map((i) => (
-                       <Card id={i.id} name={i.title} price={i.price} img={i.img1} />
+                       <Card id={i.id} name={i.title} price={i.price} img={i.img1} addToCart={addToCart}/>
                        ))}
                    </div>
                  
                    <div className='flex flex-wrap items-center justify-center gap-6'>
                      {sortedShopList().slice(4, 8).map((i) => (
-                       <Card id={i.id} name={i.title} price={i.price} img={i.img1}/>
+                       <Card id={i.id} name={i.title} price={i.price} img={i.img1} addToCart={addToCart}/>
                      ))}
                    </div>
         </div>

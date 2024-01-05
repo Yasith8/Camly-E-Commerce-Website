@@ -14,6 +14,8 @@ import 'slick-carousel/slick/slick-theme.css';
 
 function SliderBar() {
 
+  //sigma down ,dji center gro pro up
+
   const settings = {
     dots: true,
     infinite: true,
