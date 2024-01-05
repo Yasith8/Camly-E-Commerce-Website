@@ -7,10 +7,12 @@ import Badge from "@mui/material/Badge/Badge"
 import { Button, Drawer } from 'antd';
 
 import MenuIcon from '@mui/icons-material/Menu';
+import EmptyCart from './EmptyCart';
+import Cart from './Cart';
 
-function Navbar({cartCount}) {
+function Navbar({cartCount,cameraShowList,cartIndex}) {
   const [open, setOpen] = useState(false);
-  const [opernCart,setOpenCart]=useState(false);
+  const [openCart,setOpenCart]=useState(false);
   const showDrawer = () => {
     setOpen(true);
   };
@@ -20,7 +22,15 @@ function Navbar({cartCount}) {
 
 
   const handleCart=()=>{
-    console.log("Handled")
+    setOpenCart(true)
+  }
+  
+  const closeCart=()=>{
+    setOpenCart(false)
+  }
+
+  const itemOnClose=(data)=>{
+    setOpenCart(data)
   }
   return (
     <div>
@@ -40,6 +50,11 @@ function Navbar({cartCount}) {
           <Badge color="warning" badgeContent={cartCount} onClick={handleCart} className='cursor-pointer'>
             <ShoppingCartIcon />
           </Badge>
+          <Drawer title="My Cart" placement="right" onClose={closeCart} open={openCart}>
+            <div>
+              {(cartCount==0)? <EmptyCart itemOnClose={itemOnClose}/>:<Cart cartCount={cartCount} cameraShowList={cameraShowList} cartIndex={cartIndex}/>}
+            </div>
+          </Drawer>
           <button className='bg-orange-500 text-white py-2 px-5 rounded-md'>LogIn</button>
 
           {/* hamburger menu need to be done */}
@@ -49,12 +64,12 @@ function Navbar({cartCount}) {
       </button>
       <Drawer title="Capture List" placement="right" onClose={onClose} open={open}>
         <ul className='py-5 flex flex-col items-center gap-10'>
-          <li><a className='text-[18px] p-3 text-black hover:text-white rounded-lg hover:bg-orange-400' href="#home">Home</a></li>
-          <li><a className='text-[18px] p-3 text-black hover:text-white rounded-lg hover:bg-orange-400' href="#about">About Us</a></li>
-          <li><a className='text-[18px] p-3 text-black hover:text-white rounded-lg hover:bg-orange-400' href="#latest">Our Latest Products</a></li>
-          <li><a className='text-[18px] p-3 text-black hover:text-white rounded-lg hover:bg-orange-400' href="#shop">Shop</a></li>
-          <li><a className='text-[18px] p-3 text-black hover:text-white rounded-lg hover:bg-orange-400' href="#contact">Contact</a></li>
-          <li><a className='text-[18px] p-3 text-black hover:text-white rounded-lg hover:bg-orange-400' href="#blog">Blog</a></li>
+          <li><a className='text-[18px] p-3 text-black hover:text-white rounded-lg hover:bg-orange-400' onClick={onClose} href="#home">Home</a></li>
+          <li><a className='text-[18px] p-3 text-black hover:text-white rounded-lg hover:bg-orange-400' onClick={onClose} href="#about">About Us</a></li>
+          <li><a className='text-[18px] p-3 text-black hover:text-white rounded-lg hover:bg-orange-400' onClick={onClose} href="#latest">Our Latest Products</a></li>
+          <li><a className='text-[18px] p-3 text-black hover:text-white rounded-lg hover:bg-orange-400' onClick={onClose} href="#card">Shop</a></li>
+          <li><a className='text-[18px] p-3 text-black hover:text-white rounded-lg hover:bg-orange-400' onClick={onClose} href="#contact">Contact</a></li>
+          <li><a className='text-[18px] p-3 text-black hover:text-white rounded-lg hover:bg-orange-400' onClick={onClose} href="#blog">Blog</a></li>
         </ul>
       </Drawer>
           </div>
