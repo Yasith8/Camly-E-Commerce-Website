@@ -34,13 +34,16 @@ function App() {
 
   
   const addToCart=(addToCart)=>{
-    setArrAdd([...arrAdd,addToCart])
-    console.log(arrAdd)
+    
     setCartCount(cartCount+1);
     console.log(cameraShowList[addToCart])
-    //setCartIndex(addToCart)
-    setCartIndex(arrAdd)
+    setCartIndex(cameraShowList[addToCart])
 
+    setArrAdd((prevCart) => {
+      return prevCart.length === 0 ? [cameraShowList[addToCart]] : [...prevCart, cameraShowList[addToCart]];
+    });
+
+    console.log(arrAdd)
 
 
   }
@@ -62,7 +65,7 @@ function App() {
 
   return (
    <div>
-    <Navbar cartCount={cartCount} shopList={cameraShowList} cartIndex={cartIndex}/>
+    <Navbar cartCount={cartCount} shopList={cameraShowList} cartIndex={cartIndex} arrAdd={arrAdd}/>
     <Header/>
     <SliderBar/> 
     <About/>
