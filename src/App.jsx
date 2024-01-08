@@ -25,9 +25,10 @@ import CardSection from './components/CardSection'
 
 
 function App() {
-
+  
   const [cartCount,setCartCount]=useState(0);
   const [cartIndex, setCartIndex] = useState(null);
+  const [uniqueItems, setUniqueItems] = useState(new Set());
   const [arrAdd,setArrAdd]=useState([]);
 
 
@@ -42,11 +43,14 @@ function App() {
     setArrAdd((prevCart) => {
       return prevCart.length === 0 ? [cameraShowList[addToCart]] : [...prevCart, cameraShowList[addToCart]];
     });
-
-    console.log(arrAdd)
+    setUniqueItems((prevItems) => new Set([...prevItems, addToCart]));
+    //console.log(arrAdd)
 
 
   }
+
+
+ 
 
 
   const cameraShowList=[
@@ -65,7 +69,7 @@ function App() {
 
   return (
    <div>
-    <Navbar cartCount={cartCount} shopList={cameraShowList} cartIndex={cartIndex} arrAdd={arrAdd}/>
+    <Navbar cartCount={cartCount} shopList={cameraShowList} cartIndex={cartIndex} arrAdd={[...uniqueItems]}/>
     <Header/>
     <SliderBar/> 
     <About/>
