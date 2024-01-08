@@ -1,23 +1,18 @@
 import React, { useEffect, useState } from 'react'
+import CartItem from './CartItem';
 
 function Cart({cartCount,cameraShowList,cartIndex,arrAdd}) {
 
-  const [cart, setCart] = useState([]);
-
-  // Function to add a new item to the cart array
-  const addToCart = () => {
-    setCart(prevCart => [...prevCart, cartIndex]);
-  };
-  
-
   console.log(arrAdd)
+
+  
   return (
     <div>
-        <ul>
-          {arrAdd.map((i)=>(
-            <li key={i.id}>{i.title} = {i.price}</li>
-          ))}
-        </ul>
+         <ul>
+        {arrAdd.map((item, index) => (
+          <CartItem key={index} data={cameraShowList[index]} />
+        ))}
+      </ul>
     </div>
   )
 }
