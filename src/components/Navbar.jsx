@@ -10,7 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import EmptyCart from './EmptyCart';
 import Cart from './Cart';
 
-function Navbar({cartCount,cameraShowList,cartIndex,arrAdd}) {
+function Navbar({cartCount,shopList,cartIndex,arrAdd}) {
   const [open, setOpen] = useState(false);
   const [openCart,setOpenCart]=useState(false);
   const showDrawer = () => {
@@ -52,7 +52,7 @@ function Navbar({cartCount,cameraShowList,cartIndex,arrAdd}) {
           </Badge>
           <Drawer title="My Cart" placement="right" onClose={closeCart} open={openCart}>
             <div>
-              {(cartCount==0)? <EmptyCart itemOnClose={itemOnClose}/>:<Cart cartCount={cartCount} cameraShowList={cameraShowList} cartIndex={cartIndex} arrAdd={arrAdd}/>}
+              {(cartCount==0)? <EmptyCart itemOnClose={itemOnClose}/>:<Cart cartCount={cartCount} cameraShowList={shopList} cartIndex={cartIndex} arrAdd={arrAdd}/>}
             </div>
           </Drawer>
           <button className='bg-orange-500 text-white py-2 px-5 rounded-md'>LogIn</button>
