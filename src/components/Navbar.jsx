@@ -54,6 +54,7 @@ function Navbar({cartCount,shopList,cartIndex,arrAdd}) {
             <div>
               {(cartCount==0)? <EmptyCart itemOnClose={itemOnClose}/>:<Cart cartCount={cartCount} cameraShowList={shopList} cartIndex={cartIndex} arrAdd={arrAdd}/>}
             </div>
+            
           </Drawer>
           <button className='bg-orange-500 text-white py-2 px-5 rounded-md'>LogIn</button>
 
