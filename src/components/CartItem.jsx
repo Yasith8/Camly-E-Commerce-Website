@@ -15,6 +15,7 @@ function CartItem({data,updateTotalPrice,onRemove}) {
   const decHandler=()=>{
     if(itemCount<=0){
       setItemCount(0)
+      updateTotalPrice(0)
     }else{
       setItemCount(itemCount-1)
       setPrice(price-itemPrice)
