@@ -22,6 +22,7 @@ import img51 from './assets/cam/51.jpg'
 import img52 from './assets/cam/52.jpg'
 import img53 from './assets/cam/53.jpg'
 import CardSection from './components/CardSection'
+import Review from './components/Review'
 
 
 function App() {
@@ -75,6 +76,7 @@ function App() {
     <About/>
     <CamCard camList={cameraShowList} />
     <CardSection shopList={cameraShowList} addToCart={addToCart}/>
+    <Review/>
    </div>
   )
 }
