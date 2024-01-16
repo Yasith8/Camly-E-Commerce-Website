@@ -57,3 +57,8 @@ $ npm run dev
 
 
 
+## Special Notes
+
+<p align="center">
+ This application is currently under construction. I embarked on this project with the goal of learning React from scratch, opting not to seek help or follow video or documented tutorials. Initially, I encountered numerous errors, tackling each one independently and extensively researching documentation to find solutions. However, I am currently facing a challenge in implementing the functionality to delete or remove items from the cart. I am actively learning and researching to find a solution, and I aim to resolve this issue as soon as possible.
+</p>
