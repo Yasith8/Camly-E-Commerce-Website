@@ -90,7 +90,7 @@ function Cart({ cartCount, cameraShowList, cartIndex, arrAdd, afterOrder }) {
         okText="Place Order"
         width={1000}
       >
-        <div className="flex">
+        <div className="flex flex-col md:flex-row p-4 mt-3 items-center justify-center gap-3">
           <div className="mt-3">
             <h1 className="font-bold text-[1rem]">Add Your Delivery Details</h1>
             <form action="">
@@ -164,7 +164,7 @@ function Cart({ cartCount, cameraShowList, cartIndex, arrAdd, afterOrder }) {
               <input
                 type="date"
                 id="mobile"
-                className="w-[3rem] py-1 border"
+                className="w-[4rem] py-1 border"
                 placeholder="1234 **** **** ****"
                 required
               />

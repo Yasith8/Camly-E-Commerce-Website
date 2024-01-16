@@ -37,7 +37,7 @@ function Navbar({ cartCount, shopList, cartIndex, arrAdd }) {
   };
   return (
     <div>
-      <nav className="fixed top-0 left-0 w-screen bg-white">
+      <nav className="fixed top-0 left-0 w-screen bg-white z-10">
         <ul className="flex items-center justify-between py-3 px-8 md:px-[5rem] ">
           <li>
             <h1 className="font-bold scale-150">
